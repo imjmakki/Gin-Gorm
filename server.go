@@ -7,4 +7,5 @@ func main() {
 	r.GET("/", func(context *gin.Context) {
 		c.JSON(200, gin.H{"message": "Hello World!"})
 	})
+	r.Run()
 }
