@@ -19,3 +19,6 @@ func BuildResponse(status bool, message string, data interface{}) Response {
 	}
 	return res
 }
+
+func BuildErrorResponse(message string, err string, data interface{}) Response {
+}
