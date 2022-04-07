@@ -7,5 +7,9 @@ type AuthApi interface {
 	Register(ctx *gin.Context)
 }
 
-type AuthApi struct {
+type authApi struct {
+}
+
+func NewAuthApi() {
+
 }
