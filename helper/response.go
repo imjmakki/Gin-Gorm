@@ -6,3 +6,6 @@ type Response struct {
 	Error   interface{} `json:"errors"`
 	Data    interface{} `json:"data"`
 }
+
+type EmptyObj struct {
+}
