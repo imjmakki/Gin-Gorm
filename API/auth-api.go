@@ -10,6 +10,14 @@ type AuthApi interface {
 type authApi struct {
 }
 
-func NewAuthApi() {
+func NewAuthApi() AuthApi {
+	return &authApi{}
+}
+
+func (c *authApi) Login(ctx *gin.Context) {
+
+}
+
+func (c *authApi) Register(ctx *gin.Context) {
 
 }
