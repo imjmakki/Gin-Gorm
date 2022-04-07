@@ -53,7 +53,6 @@ func (s *jwtService) GenerateToken(UserID string) string {
 }
 
 func (J *jwtService) ValidateToken(token string) (*jwt.Token, error) {
-	return jwt.Parse(){
-
-	}
+	return jwt.Parse(token, func(t_ *jwt.Token) (interface{}, error) {
+	})
 }
