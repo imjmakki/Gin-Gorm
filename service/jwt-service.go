@@ -31,3 +31,7 @@ func getSecretKey() string {
 	}
 	return secretKey
 }
+
+func (s *jwtService) GenerateToken(UserID string) string {
+
+}
