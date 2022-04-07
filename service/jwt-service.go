@@ -51,3 +51,9 @@ func (s *jwtService) GenerateToken(UserID string) string {
 	}
 	return t
 }
+
+func (J *jwtService) ValidateToken(token string) (*jwt.Token, error) {
+	return jwt.Parse(){
+
+	}
+}
