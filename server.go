@@ -16,9 +16,11 @@ func main() {
 	defer config.CloseConnect(db)
 	r := gin.Default()
 
-	authRoutes := r.Group("api/auth"){
+	authRoutes := r.Group("api/auth")
+	{
 		authRoutes.POST("/login")
 		authRoutes.POST("/register")
 	}
+
 	r.Run()
 }
