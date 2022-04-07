@@ -1,5 +1,7 @@
 package helper
 
+import "strings"
+
 type Response struct {
 	Status  bool        `json:"status"`
 	Message string      `json:"message"`
@@ -21,4 +23,5 @@ func BuildResponse(status bool, message string, data interface{}) Response {
 }
 
 func BuildErrorResponse(message string, err string, data interface{}) Response {
+	splittedError := strings.Split(err, "\n")
 }
