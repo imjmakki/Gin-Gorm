@@ -1,6 +1,9 @@
 package service
 
-import "os"
+import (
+	"os"
+	"time"
+)
 
 type JWTService interface {
 	GenerateToken(userID string) string
@@ -33,5 +36,10 @@ func getSecretKey() string {
 }
 
 func (s *jwtService) GenerateToken(UserID string) string {
-
+	claims := &jwtCustomClaim{
+		UserID,
+		jwt.StandardClaims{
+			ExpiresAt: time.Now().Add().Unix(),
+		}
+	}
 }
