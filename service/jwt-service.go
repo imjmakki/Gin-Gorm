@@ -40,8 +40,10 @@ func (s *jwtService) GenerateToken(UserID string) string {
 		UserID,
 		jwt.StandardClaims{
 			ExpiresAt: time.Now().AddDate(1, 0, 0).Unix(),
-			Issuer: j.issuer,
-			IssuedAt: time.Now().Unix(),
-		}
+			Issuer:    j.issuer,
+			IssuedAt:  time.Now().Unix(),
+		},
 	}
+	token := jwt.NewWithCliams(jwt.SigningMethodHS512, claims)
+	t, err := token.SignedString([]byte(j.secretKey))
 }
