@@ -1,5 +1,7 @@
 package service
 
+import "os"
+
 type JWTService interface {
 	GenerateToken(userID string) string
 	ValidateToken(token string) (*jwt.token, error)
@@ -16,5 +18,12 @@ type jwtService struct {
 }
 
 func NewJWTService() JWTService {
-	return &jwtService{}
+	return &jwtService{
+		issuer:    "MJ",
+		secretKey: getSecretKey(),
+	}
+}
+
+func getSecretKey() string {
+	secretKey := os.Getenv("JWT_SECRET")
 }
