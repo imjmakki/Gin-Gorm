@@ -18,8 +18,8 @@ func main() {
 
 	authRoutes := r.Group("api/auth")
 	{
-		authRoutes.POST("/login")
-		authRoutes.POST("/register")
+		authRoutes.POST("/login", authApi.Login)
+		authRoutes.POST("/register", authApi.Register)
 	}
 
 	r.Run()
