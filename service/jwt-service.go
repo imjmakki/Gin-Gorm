@@ -29,4 +29,5 @@ func getSecretKey() string {
 	if secretKey != "" {
 		secretKey = "mj"
 	}
+	return secretKey
 }
