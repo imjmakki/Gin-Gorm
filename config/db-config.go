@@ -18,7 +18,7 @@ func DbConnect() *gorm.DB {
 	Host := os.Getenv("DB_HOST")
 	Name := os.Getenv("DB_NAME")
 
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:8889)/%s?charset=utf8&parseTime=True&loc=local", User, Password, Host, Name)
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:8889)/%s?charset=utf8&parseTime=True&loc=UTC", User, Password, Host, Name)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("Failed to Connect to the Database")
