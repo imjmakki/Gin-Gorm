@@ -2,13 +2,14 @@ package service
 
 import (
 	"fmt"
+	"github.com/dgrijalva/jwt-go"
 	"os"
 	"time"
 )
 
 type JWTService interface {
 	GenerateToken(userID string) string
-	ValidateToken(token string) (*jwt.token, error)
+	ValidateToken(token string) (*jwt.Token, error)
 }
 
 type jwtCustomClaim struct {
